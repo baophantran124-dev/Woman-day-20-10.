@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>💐 Chúc mừng 20/10 💐</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #fff0f6, #ffe6f2);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+    h1 {
+      font-size: 45px;
+      color: #ff4d88;
+      text-shadow: 0 0 20px #ff99c8;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff80ab; }
+      to { text-shadow: 0 0 40px #ff4d88, 0 0 70px #ffb6d9; }
+    }
+    .msg {
+      margin-top: 25px;
+      font-size: 21px;
+      color: #ff007f;
+      font-style: italic;
+      max-width: 650px;
+      line-height: 1.7;
+      animation: fadeIn 2.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .petal {
+      position: absolute;
+      top: -10px;
+      font-size: 18px;
+      color: #ff7aa8;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #ff4d88;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.03); opacity: .9; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💐 Chúc mừng 20/10 💐</h1>
+
+  <div class="msg">
+    Gửi đến <b>nhóm nữ xinh xắn, dễ thương và hơi lầy chút xíu</b> 😆💫<br><br>
+    Nhân ngày 20/10, chúc các bà luôn xinh đẹp, vui vẻ,  
+    học giỏi hơn, ngủ sớm hơn (bớt tám lại tí cho khoẻ 😜).<br><br>
+    Chúc cả nhóm lúc nào cũng rực rỡ, tươi như hoa và cười nhiều hơn nắng nhé 🌸  
+  </div>
+
+  <div class="footer">
+    Muốn tặng quà cho các fen lắm nhưng ngân sách không cho phép 😭💸
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/24/audio_d7303d9678.mp3?filename=beautiful-day-145258.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.textContent = ['🌸', '💖', '✨'][Math.floor(Math.random() * 3)];
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (4 + Math.random() * 6) + 's';
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 9000);
+    }
+    setInterval(createPetal, 250);
+  </script>
+</body>
+</html>
